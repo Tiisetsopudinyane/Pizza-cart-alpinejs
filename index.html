@@ -12,7 +12,7 @@
     </head>
       <body>
         <h1 class="border"><i class="fa-solid fa-pizza"></i>PERFECT <span>PIZZA</span></h1>
-        <hr>
+        <hr id="card">
         <div class="sections" x-data="{open:false,
             opening:false,
             txtNotEnough:false,
@@ -31,7 +31,7 @@
             <div x-show="open" >
                 <section class="card" >
                     <h4 class="spaning">Shopping card</h4>
-                    <div id="card">
+                    <div >
                         <div>
                             <span class="spaning">Small size</span><button class="btn sbtn" @click="[smallPricePizza+=smallCounter,small++]">+</button> <span class="small " x-text="small"></span> <button class="btn sbtn_" @click="small>0 ? [smallPricePizza-=smallCounter,small--]:0">-</button>
                         </div>
