@@ -1,0 +1,170 @@
+body{
+    background-color: rgb(240, 116, 15);
+    min-height: 100%;
+    padding:0 2em 0 2em;
+    position: relative;
+    margin: 0;
+}
+.border{
+    background-color: rgb(245, 171, 96);
+    margin: 0.5em;
+    height: 1.5em;
+    padding-top: .5em;
+    border-radius: .25em;
+}
+h1{
+    text-align: center;
+}
+h1 span,.totalPrice{
+    color: white;
+}
+hr{
+    margin: 1em;
+    border-color: rgb(0, 0, 0);
+}
+
+
+.card{
+    text-align: center;
+    margin-left: .5em;
+    background-color: rgb(240, 141, 11);
+    height: fit-content;
+}
+section{
+    padding:2em;
+    margin: 1em;
+    border-radius: 1em;
+}
+h4 span{
+    color: wheat;
+}
+img{
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.notEnough{
+    line-height: 1em;
+    color:black;
+}
+.price span{
+    color:white;
+}
+h4{
+    color:white
+}
+section p{
+    color: wheat;
+    font-weight: bold;
+}
+.small{
+    background-color: rgb(236, 157, 9);
+    flex:1;
+}
+.medium{
+    background-color: rgb(212, 114, 2);
+    flex:1;
+}
+span.spaning{
+    width: 50px;
+    display: inline-flex;
+    color: white;
+}
+.spaning, span.small,span.medium,span.large{
+    color: white;
+    font-weight: bold;
+    background-color: rgb(240, 141, 11);
+    text-align: center;
+    margin: 0.2em;
+    line-height: 1em;
+}
+
+.btn,.btn1{
+    background-color: rgb(114, 173, 6);
+    color:black;
+    font-weight: bold;
+    border-color:  rgb(173, 143, 6);
+    border: 0;
+    font-weight: bold;
+    border-radius: .5em;
+    height: 2em;
+    width:100px;
+    margin: 1em;
+}
+.btn:hover,.btn1:hover{
+    color: white;
+    background-color: rgb(4, 117, 4);
+}
+.label{
+    width: 20%;
+    border-radius: 10px;
+    border:none;
+    text-align: center;
+    height: 2em;
+}
+.large{
+    background-color: rgb(236, 157, 9);
+    flex:1;
+}
+footer{
+    display: flex;
+    bottom: 0;
+    background-color: rgb(197, 184, 7);
+    font-style: italic;
+    font-weight:bold;
+    line-height: .25em;
+    border-radius: 0.5em;
+}
+.footer{
+    padding:1em;
+    margin: 1em;
+    flex:1;
+}
+@media (min-width:300px) {
+    span.spaning{
+        width: 50%;
+        display: inline-flex;
+        color: white;
+    }
+    .card div div .btn{
+        width: 20px;
+        padding: 0;
+        margin: 5px;
+    }
+    .card{
+        background-color: rgb(240, 141, 11);
+        width: 100%;
+        padding: .1em;
+        line-height: .5em;
+        flex: 1;
+    }
+}
+@media (min-width:960px) {
+    span.spaning{
+        width: 50px;
+        display: inline-flex;
+        color: white;
+    }
+    .sections{
+        display: flex;
+    }
+    .card{
+        background-color: rgb(240, 141, 11);
+        width: 100%;
+        padding: .1em;
+        line-height: .5em;
+    }
+    .card div div .btn{
+        width: 20px;
+    }
+    .priceImgBox{
+        display: flex;
+    }
+    .priceImgBox h3{
+        padding: 1em;
+    }
+    img{
+        width: 150px;
+    }
+}
