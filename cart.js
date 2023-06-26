@@ -12,6 +12,10 @@ function reload(){
         window.location.reload();
 }
 
+function locate(str){
+    document.querySelector(str).scrollIntoView();
+}
+
 function toFix(total){
     if(!total.toFixed(2)){
         return;

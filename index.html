@@ -29,9 +29,9 @@
             notEnough:''}">
             <div>
             <div x-show="open" >
-                <section class="card">
+                <section class="card" >
                     <h4 class="spaning">Shopping card</h4>
-                    <div>
+                    <div id="card">
                         <div>
                             <span class="spaning">Small size</span><button class="btn sbtn" @click="[smallPricePizza+=smallCounter,small++]">+</button> <span class="small " x-text="small"></span> <button class="btn sbtn_" @click="small>0 ? [smallPricePizza-=smallCounter,small--]:0">-</button>
                         </div>
@@ -65,7 +65,7 @@
                 <h3>SMALL PIZZA</h3>
                 </div>
                 <h4 class="price"><i class="fa-solid fa-tag">PRICE:R<span class="smallPrice">29.90</span></i></h4>
-                <button class="btn btnBuy1" @click="open=!open">Buy</button>
+                <button class="btn btnBuy1" @click="[open=!open,document.getElementById('card').scrollIntoView()]">Buy</button>
                 <p>small pizza with 3 toppings. 1 meat topping. 3 or less other toppings</p>
                 
             </section>
@@ -75,7 +75,7 @@
                 <h3>MEDIUM PIZZA</h3>
                 </div>
                 <h4 class="price"><i class="fa-solid fa-tag">PRICE:R<span class"mediumPrice">69.90</span></i> </h4>
-                <button class="btn btnBuy2" @click="open=!open">Buy</button>
+                <button class="btn btnBuy2" @click="[open=!open,document.getElementById('card').scrollIntoView()]">Buy</button>
                 <p>medium margeritha pizza with 3 toppings max. 2 or less meat topping. 3 or less other toppings.</p>
                 
             </section>
@@ -85,7 +85,7 @@
                 <h3>LARGE PIZZA</h3>
                 </div>
                 <h4 class="price "><i class="fa-solid fa-tag">PRICE:R<span class"largePrice">99.99</span></i> </h4>
-                <button class="btn btnBuy3" @click="open=!open">Buy</button>
+                <button class="btn btnBuy3" @click="[open=!open,document.getElementById('card').scrollIntoView()]">Buy</button>
                 <p>large margeritha pizza with 3 toppings max. 3 meat toppings max. 3or less or less other toppings.</p>
                 
             </section>
@@ -93,15 +93,15 @@
           <hr>
         </div>
       </body>
-      <footer>
-            <div class="footer">
+      <footer class="f">
+            <div class="footer f1">
                 <h3>Contacts :</h3>
                <p><i class="fa-solid fa-phone-volume"></i>Phone: 021 000 1111</p>
                <p></a><i class="fa-brands fa-facebook">Facebook</i></a></p>
                <p><a><i class="fa-brands fa-square-instagram">Instagram</i></a></p>
                <p><a><i class="fa-solid fa-envelope-circle-check">pizzasam@pizzahunt.com</i></a></p>
             </div>
-            <div class="footer">
+            <div class="footer f2">
                 <h3><i class="fa-solid fa-location-dot"></i>ADDRESS :</h3>
                 <p>12983 sam street</p>
                 <p>Beyville</p>

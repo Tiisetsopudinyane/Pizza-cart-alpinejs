@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+   }
 body{
     background-color: rgb(240, 116, 15);
     min-height: 100%;
@@ -108,24 +111,26 @@ span.spaning{
     flex:1;
 }
 footer{
-    display: flex;
     bottom: 0;
+    flex: 1;
     background-color: rgb(197, 184, 7);
     font-style: italic;
     font-weight:bold;
-    line-height: .25em;
+    line-height: .5em;
     border-radius: 0.5em;
 }
 .footer{
     padding:1em;
     margin: 1em;
-    flex:1;
 }
 @media (min-width:300px) {
     span.spaning{
         width: 50%;
         display: inline-flex;
         color: white;
+    }
+    .footer{
+        flex:1;
     }
     .card div div .btn{
         width: 20px;
@@ -145,6 +150,9 @@ footer{
         width: 50px;
         display: inline-flex;
         color: white;
+    }
+    footer{
+        display: flex;
     }
     .sections{
         display: flex;
