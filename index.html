@@ -13,48 +13,35 @@
       <body>
         <h1 class="border"><i class="fa-solid fa-pizza"></i>PERFECT <span>PIZZA</span></h1>
         <hr id="card">
-        <div class="sections" x-data="{open:false,
-            opening:false,
-            txtNotEnough:false,
-            smallCounter:29.90,
-            mediumCounter:69.90,
-            largeCounter:99.90,
-            small:0,
-            medium:0,
-            large:0,
-            smallPricePizza:0,
-            mediumPricePizza:0,
-            largePricePizza:0,
-            priceToPay:'',
-            notEnough:''}">
+        <div class="sections" x-data="data">
             <div>
             <div x-show="open" >
                 <section class="card" >
                     <h4 class="spaning">Shopping card</h4>
                     <div >
                         <div>
-                            <span class="spaning">Small size</span><button class="btn sbtn" @click="[smallPricePizza+=smallCounter,small++]">+</button> <span class="small " x-text="small"></span> <button class="btn sbtn_" @click="small>0 ? [smallPricePizza-=smallCounter,small--]:0">-</button>
+                            <span class="spaning">Small size</span><button class="btn sbtn" @click="smallPizzaIncrement">+</button> <span class="small " x-text="small"></span> <button class="btn sbtn_" @click="smallPizzaDecrement">-</button>
                         </div>
                         <div >
-                            <span class="spaning">Medium size</span><button class="btn mbtn" @click="[mediumPricePizza+=mediumCounter,medium++]">+</button> <span class="medium" x-text="medium"></span> <button class="btn mbtn_" @click="medium>0 ? [mediumPricePizza-=mediumCounter,medium--]:0">-</button>
+                            <span class="spaning">Medium size</span><button class="btn mbtn" @click="mediumPizzaIncrement">+</button> <span class="medium" x-text="medium"></span> <button class="btn mbtn_" @click="mediumPizzaDecrement">-</button>
                         </div>
                         <div>
-                            <span class="spaning">Large size</span><button class="btn lbtn" @click="[largePricePizza+=largeCounter,large++]">+</button> <span class="large " x-text="large" ></span> <button class="btn lbtn_" @click="large>0 ? [largePricePizza-=largeCounter,large--]:0">-</button>
+                            <span class="spaning">Large size</span><button class="btn lbtn" @click="largePizzaIncrement">+</button> <span class="large" x-text="large" ></span> <button class="btn lbtn_" @click="largePizzaDecrement">-</button>
                         </div>
                         <div>
                           <div>
-                            <h4>Total Price:R<span class="totalPrice" x-text="toFix(smallPricePizza+mediumPricePizza+largePricePizza)"></span></h4>
+                            <h4>Total Price:R<span class="totalPrice" x-text="addition"></span></h4>
                           </div>
                             <p class="notEnough txtNotEnough" x-show="!txtNotEnough" x-text="notEnough"></p>
                              <div>
                               <input type="text" x-show="!opening" class="label" x-model="priceToPay">
                               <br>
-                             <button class="btn1 btnPay" x-show="!opening" @click="priceToPay>=smallPricePizza+mediumPricePizza+largePricePizza? [notEnough='Enjoy your pizzas!',opening=!opening] : [txtNotEnough_(),opening=opening]">Pay</button>
+                             <button class="btn1 btnPay" x-show="!opening" @click="pirceTopay">Pay</button>
                              </div>
                             
                         </div>
                     </div>
-                    <button class="btn1 btnCheckOut" x-show="opening" @click="[small=0,medium=0,large=0,opening=!opening,priceToPay='',notEnough='',reload()]">Check-Out</button>
+                    <button class="btn1 btnCheckOut" x-show="opening" @click="checkOut">Check-Out</button>
                 </section>
             </div>
             
@@ -65,7 +52,7 @@
                 <h3>SMALL PIZZA</h3>
                 </div>
                 <h4 class="price"><i class="fa-solid fa-tag">PRICE:R<span class="smallPrice">29.90</span></i></h4>
-                <button class="btn btnBuy1" @click="[open=!open,document.getElementById('card').scrollIntoView()]">Buy</button>
+                <button class="btn btnBuy1" @click="OpenCardAndscrollUpOnMobileDevices">Buy</button>
                 <p>small pizza with 3 toppings. 1 meat topping. 3 or less other toppings</p>
                 
             </section>
@@ -75,7 +62,7 @@
                 <h3>MEDIUM PIZZA</h3>
                 </div>
                 <h4 class="price"><i class="fa-solid fa-tag">PRICE:R<span class"mediumPrice">69.90</span></i> </h4>
-                <button class="btn btnBuy2" @click="[open=!open,document.getElementById('card').scrollIntoView()]">Buy</button>
+                <button class="btn btnBuy2" @click="OpenCardAndscrollUpOnMobileDevices">Buy</button>
                 <p>medium margeritha pizza with 3 toppings max. 2 or less meat topping. 3 or less other toppings.</p>
                 
             </section>
@@ -85,7 +72,7 @@
                 <h3>LARGE PIZZA</h3>
                 </div>
                 <h4 class="price "><i class="fa-solid fa-tag">PRICE:R<span class"largePrice">99.99</span></i> </h4>
-                <button class="btn btnBuy3" @click="[open=!open,document.getElementById('card').scrollIntoView()]">Buy</button>
+                <button class="btn btnBuy3" @click="OpenCardAndscrollUpOnMobileDevices">Buy</button>
                 <p>large margeritha pizza with 3 toppings max. 3 meat toppings max. 3or less or less other toppings.</p>
                 
             </section>
