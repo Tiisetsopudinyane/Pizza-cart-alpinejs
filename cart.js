@@ -59,8 +59,8 @@ document.addEventListener("alpine:init", () =>{
             document.querySelector(str).scrollIntoView();
         },
             addition(){
-               total= this.smallPricePizza+this.mediumPricePizza+this.largePricePizza;
-                return toFix(total);
+               this.total= this.smallPricePizza+this.mediumPricePizza+this.largePricePizza;
+                return toFix(this.total);
             },
            // priceToPay>=smallPricePizza+mediumPricePizza+largePricePizza? [notEnough='Enjoy your pizzas!',opening=!opening]
            pirceTopay(){
